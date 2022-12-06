@@ -45,7 +45,8 @@ const userAge = document.getElementById('userAge');
 const getButton = document.getElementById ('get-button');
 const resetButton = document.getElementById ('reset-button');
 const ticketResult = document.querySelector('.result-ticket');
-
+const userName= document.getElementById ('userName');
+const userNameRecap = document.getElementById('user-name-recap');
 
 // 2-Creo costanti
 
@@ -53,14 +54,17 @@ const kmPrice = 0.21;
 const underageSale = 20;
 const elderlySale = 40;
 
-
 // 3- Creo logica ad evento click button
 
 getButton.addEventListener('click', function(){
 
     // 4-Prendo i valori dei chilometri e l eta e li assegno
    const userKmElement = parseInt(userKm.value.trim());
-   const userAgeElement = parseInt(userAge.value.trim());
+   const userAgeElement = userAge.options[userAge.selectedIndex].value;
+   const userAgeElementText = userAge.options[userAge.selectedIndex].text;
+   const userNameElement = userName.value.trim();
+
+   console.log(userAgeElement);
 
     //Validazione
 
@@ -70,15 +74,15 @@ getButton.addEventListener('click', function(){
     isValid = false;
     alert ('Inserisci chilometraggio valido');
     }
-
-    if (isNaN(userAgeElement) || userAgeElement < 1 || userAgeElement > 120){
-    isValid = false;
-    alert ('Inserisci età valida');
-    }
-
+    
+    if (!isNaN(userNameElement)){
+        isValid = false;
+        alert ('Inserisci Nome e Cognome valido');
+        }
 
     if (isValid){
-   ticketResult.classList.add('visibility');
+
+    ticketResult.classList.add('visibility');
 
     // 5- Calcolo costo
     const userTicketPrice = userKmElement * kmPrice;
@@ -87,35 +91,37 @@ getButton.addEventListener('click', function(){
 
     let saleTicketPrice = userTicketPrice;
     
-    if (userAgeElement >= 65){
+    if (userAgeElement === 'old'){
         saleTicketPrice = userTicketPrice - ( userTicketPrice * elderlySale) / 100;
+        nosale.innerText = `Il tuo prezzo senza sconto era: ${userTicketPrice.toFixed(2)} €`;
        
     }
     
-    if ( userAgeElement < 18){
+    else if ( userAgeElement === 'young'){
         saleTicketPrice = userTicketPrice - (userTicketPrice * underageSale) / 100;
+        nosale.innerText = `Il tuo prezzo senza sconto era: ${userTicketPrice.toFixed(2)} €`;
     }
-    
-    
+   
+
     // 7-stampo a video
     
-    const message = `Il costo finale del tuo biglietto è ${saleTicketPrice.toFixed(2)} €`;
-    
-    ticket.innerText = message;
-    nosale.innerText = `Il tuo prezzo senza sconto era: ${userTicketPrice.toFixed(2)} €`;
-    age.innerText = ` Eta inserita: ${userAgeElement}`;
+    const message = `Il costo del tuo biglietto è ${saleTicketPrice.toFixed(2)} €`;
+    userNameRecap.innerText = `Nome passeggero: ${userNameElement}`;
+    ticket.innerText = message;  
+    age.innerText = ` Fascia di eta inserita: ${userAgeElementText}`;
     km.innerText = ` Km inseriti: ${userKmElement}`;
     }
     
     });
+
    
     // 8- Logica bottone di reset
- resetButton.addEventListener('click' , function(){
+    resetButton.addEventListener('click' , function(){
 
     userKm.value='';
-    userAge.value = '';
+    userName.value = '';
     ticketResult.classList.remove('visibility');
- });
+    });
 
 
 
