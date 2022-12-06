@@ -1,0 +1,57 @@
+/*  CSS RESET */
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* UTILITIES */
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* GENERAL */
+
+body{
+    font-family: sans-serif;
+    background-image: url(../img/stationbg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* BODY */
+
+.ticket-window{
+    background-image: url(../img/ticketbg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 200px;
+    border: 3px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ticket-info{
+
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.ticket-img img{
+    width: 300px;
+    height: 100%;
+}
