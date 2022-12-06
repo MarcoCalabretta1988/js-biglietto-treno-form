@@ -22,24 +22,70 @@ body{
     background-position: center;
 }
 
+input{
+    display: block;
+    border-color: rgb(10, 10, 117);
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+label{
+    font-weight: bold;
+    color:rgb(10, 10, 117);
+}
+
+button{
+    margin: 10px 20px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-weight: bold;
+    color:rgb(10, 10, 117);
+    cursor: pointer;
+}
 /* BODY */
 
 .ticket-window{
     background-image: url(../img/ticketbg.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    height: 200px;
+    background-size:cover;
+    height: 300px;
     width: 900px;
     margin: 0 auto;
     margin-top: 200px;
     border: 3px solid black;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
+.ticket-window-bottom{
+   
+    height: 300px;
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.window-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+    text-align: center;
+}
+
+.window-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+   
+}
 
 /* Result Ticket */
 
