@@ -19,13 +19,20 @@
     <div class="ticket-window">
 
         <div class="ticket-img">
+            <label for="userKm">Inserisci i chilometri</label>
             <input type="number" id="userKm">
-            <input type="number" id="userAge">
+            <label for="UserAge">Nome e Cognome</label>
+            <input type="number" id="userName">
+            <select name="Fascia di Età" id="userAge">
+                <option value="young">Minorenne</option>
+                <option value="adult">Adulto</option>
+                <option value="old">Over 65</option>
+            </select>
             <button type="button" id="get-button">Get</button>
             <button type="button" id="reset-button">Reset</button>
         </div>
 
-        <div >
+        <div class="result-ticket" >
               <div id="age" class="ticket-info"></div>
               <div id="km" class="ticket-info"></div>
               <div id="nosale" class="ticket-info"></div>

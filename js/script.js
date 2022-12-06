@@ -44,6 +44,7 @@ const userKm = document.getElementById('userKm');
 const userAge = document.getElementById('userAge');
 const getButton = document.getElementById ('get-button');
 const resetButton = document.getElementById ('reset-button');
+const ticketResult = document.querySelector('.result-ticket');
 
 
 // 2-Creo costanti
@@ -60,6 +61,24 @@ getButton.addEventListener('click', function(){
     // 4-Prendo i valori dei chilometri e l eta e li assegno
    const userKmElement = parseInt(userKm.value.trim());
    const userAgeElement = parseInt(userAge.value.trim());
+
+    //Validazione
+
+    let isValid = true;
+
+    if (isNaN(userKmElement) || userKmElement < 1 ){
+    isValid = false;
+    alert ('Inserisci chilometraggio valido');
+    }
+
+    if (isNaN(userAgeElement) || userAgeElement < 1 || userAgeElement > 120){
+    isValid = false;
+    alert ('Inserisci età valida');
+    }
+
+
+    if (isValid){
+   ticketResult.classList.add('visibility');
 
     // 5- Calcolo costo
     const userTicketPrice = userKmElement * kmPrice;
@@ -86,6 +105,7 @@ getButton.addEventListener('click', function(){
     nosale.innerText = `Il tuo prezzo senza sconto era: ${userTicketPrice.toFixed(2)} €`;
     age.innerText = ` Eta inserita: ${userAgeElement}`;
     km.innerText = ` Km inseriti: ${userKmElement}`;
+    }
     
     });
    
@@ -94,34 +114,18 @@ getButton.addEventListener('click', function(){
 
     userKm.value='';
     userAge.value = '';
+    ticketResult.classList.remove('visibility');
  });
 
 
 
-//VALIDAZIONE
-
-/*let isValid = true;
-
-if (isNaN(userKm) || userKm < 1 ){
-    isValid = false;
-    alert ('Inserisci chilometraggio valido');
-}
 
 
 
 
-if (isNaN(userAge) || userAge < 1 || userAge > 120){
-    isValid = false;
-    alert ('Inserisci età valida');
-}
 
 
 
 
-if (isValid){
-*/
-// 7-Calcolo costo
 
 
-
-//}
