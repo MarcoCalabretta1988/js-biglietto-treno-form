@@ -16,11 +16,11 @@
 </head>
 <body>
 
-    <div class="ticket-window">
+    <section class="ticket-window">
           <div class="window-top">
             <div>
                 <label for="userKm">Inserisci i chilometri</label>
-                <input type="number" id="userKm">
+                <input type="number" id="userKm" min=5>
             </div>
             <div>
                 <label for="userName">Nome e Cognome</label>
@@ -37,17 +37,28 @@
             
           </div>
         <div class="window-button">
-          <button type="button" id="get-button">Get</button>
+          <button type="button" id="get-button">Calcola il biglietto</button>
           <button type="button" id="reset-button">Reset</button>
         </div>
-    </div>
+    </section>
 
-        <div class="result-ticket ticket-window-bottom" >
-              <h2 id="user-name-recap"></h2>
-              <div id="age" ></div>
-              <div id="km" ></div>
-              <div id="ticketprice"></div>
-              <div id="nosale"></div>
-        </div>
+        <section class="result-ticket" >
+            <div class="ticket-window-bottom">
+                <div class="ticket-info">
+                    <img src="img/ticket.jpg" alt="Ticket">
+                </div>
+                 <div class="ticket-info">
+                  
+                    <h2 id="user-name-recap"></h2>
+                    <hr>
+                    <div id="age" ></div>
+                    <div id="km" ></div>
+                    <div id="ticketprice"></div>
+                    <div id="nosale"></div>
+                    <div id="carrozza"></div>
+                    <div id = "n-biglietto"></div>
+                </div>  
+            </div>
+        </section>
 </body>
 </html>

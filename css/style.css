@@ -69,6 +69,19 @@ button{
     border-radius: 20px;
     background-color: white;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ticket-info div{
+    margin: 10px 0;
+
+}
+
+img{
+    max-width: 270px;
+    display: inline-block;
 }
 
 .window-top{

@@ -47,6 +47,8 @@ const resetButton = document.getElementById ('reset-button');
 const ticketResult = document.querySelector('.result-ticket');
 const userName= document.getElementById ('userName');
 const userNameRecap = document.getElementById('user-name-recap');
+const nCarrozza = document.getElementById('carrozza');
+const nBiglietto = document.getElementById('n-biglietto');
 
 // 2-Creo costanti
 
@@ -63,14 +65,16 @@ getButton.addEventListener('click', function(){
    const userAgeElement = userAge.options[userAge.selectedIndex].value;
    const userAgeElementText = userAge.options[userAge.selectedIndex].text;
    const userNameElement = userName.value.trim();
+   const nBigliettoMin = 10000;
 
-   console.log(userAgeElement);
+    const nBigliettoRandom = Math.floor(Math.random() * (99999 - nBigliettoMin) + nBigliettoMin);
+    const nCarrozzaRandom = Math.floor (Math.random() * 10) + 1;
 
     //Validazione
 
     let isValid = true;
 
-    if (isNaN(userKmElement) || userKmElement < 1 ){
+    if (isNaN(userKmElement) || userKmElement < 5 ){
     isValid = false;
     alert ('Inserisci chilometraggio valido');
     }
@@ -110,6 +114,8 @@ getButton.addEventListener('click', function(){
     ticket.innerText = message;  
     age.innerText = ` Fascia di eta inserita: ${userAgeElementText}`;
     km.innerText = ` Km inseriti: ${userKmElement}`;
+    nCarrozza.innerText = `N° Carrozza: ${nCarrozzaRandom}`;
+    nBiglietto.innerText = `N° Biglietto: ${nBigliettoRandom}`;
     }
     
     });
