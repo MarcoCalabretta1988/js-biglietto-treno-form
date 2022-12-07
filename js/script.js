@@ -42,19 +42,23 @@ const km = document.getElementById('km');
 const age = document.getElementById('age');
 const userKm = document.getElementById('userKm');
 const userAge = document.getElementById('userAge');
-const getButton = document.getElementById ('get-button');
-const resetButton = document.getElementById ('reset-button');
 const ticketResult = document.querySelector('.result-ticket');
 const userName= document.getElementById ('userName');
 const userNameRecap = document.getElementById('user-name-recap');
 const nCarrozza = document.getElementById('carrozza');
 const nBiglietto = document.getElementById('n-biglietto');
+                  // BUTTON
+const getButton = document.getElementById ('get-button');
+const resetButton = document.getElementById ('reset-button');
+
 
 // 2-Creo costanti
 
 const kmPrice = 0.21;
 const underageSale = 20;
 const elderlySale = 40;
+const nBigliettoMin = 10000;
+const nBigliettoMax = 99999;
 
 // 3- Creo logica ad evento click button
 
@@ -67,8 +71,7 @@ getButton.addEventListener('click', function(){
     const userNameElement = userName.value.trim();
 
     /*Creo variabili random*/
-    const nBigliettoMin = 10000;
-    const nBigliettoRandom = Math.floor(Math.random() * (99999 - nBigliettoMin) + nBigliettoMin);
+    const nBigliettoRandom = Math.floor(Math.random() * (nBigliettoMax - nBigliettoMin) + nBigliettoMin);
     const nCarrozzaRandom = Math.floor (Math.random() * 10) + 1;
 
     //Validazione
