@@ -34,7 +34,7 @@ Se non vi sentite particolarmente creativi, ispiratevi all'immagine in allegato.
 */
 
 
-//1-Prendo l'elemento da DOM
+//1-Prendo l'elementi da DOM
 
 const ticket = document.getElementById('ticketprice');
 const nosale = document.getElementById('nosale');
@@ -60,13 +60,14 @@ const elderlySale = 40;
 
 getButton.addEventListener('click', function(){
 
-    // 4-Prendo i valori dei chilometri e l eta e li assegno
-   const userKmElement = parseInt(userKm.value.trim());
-   const userAgeElement = userAge.options[userAge.selectedIndex].value;
-   const userAgeElementText = userAge.options[userAge.selectedIndex].text;
-   const userNameElement = userName.value.trim();
-   const nBigliettoMin = 10000;
+    // 4-Prendo i valori dal form li assegno
+    const userKmElement = parseInt(userKm.value.trim());
+    const userAgeElement = userAge.options[userAge.selectedIndex].value;
+    const userAgeElementText = userAge.options[userAge.selectedIndex].text;
+    const userNameElement = userName.value.trim();
 
+    /*Creo variabili random*/
+    const nBigliettoMin = 10000;
     const nBigliettoRandom = Math.floor(Math.random() * (99999 - nBigliettoMin) + nBigliettoMin);
     const nCarrozzaRandom = Math.floor (Math.random() * 10) + 1;
 
